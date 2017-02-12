@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Naruto Battle Calculator</title>
+
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Naruto Battle Calculator</h1>
+            <p class="lead">Калкулатор който помага на админа да води битки</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3" id="player1">
+                <h2>Играч 1</h2>
+                <p>
+                    <input class="name" placeholder="Име" /><br />
+                    <strong>Статистики:</strong>
+                    <div>
+                        <input class="str" type="number" value="1" placeholder="Сила" /><br />
+                        <input class="int" type="number" value="1" placeholder="Интелект" /><br />
+                        <input class="will" type="number" value="1" placeholder="Воля" /><br />
+                        <input class="speed" type="number" value="1" placeholder="Бързина" /><br />
+                    </div>
+                </p>
+                <p>
+                    <strong>Модификатори от Умения:</strong>
+                    <div class="btn btn-primary" href="#" role="button" id="add-skill-p1"> добави... &raquo;</div>
+                    <div id="p1-skills" class="skills"></div>
+                </p>
+                <p>
+                    <strong>Елементални Джуцута:</strong>
+                    <div class="btn btn-primary" href="#" role="button" id="add-jutsu-p1"> добави... &raquo;</div>
+                    <div id="p1-jutsus"class="jutsus"></div>
+                </p>
+            </div>
+            <div class="col-sm-3" id="player2">
+                <h2>Играч 2</h2>
+                <p>
+                    <input class="name" placeholder="Име" /><br />
+                    <strong>Статистики:</strong>
+                    <div>
+                        <input class="str" type="number" value="1" placeholder="Сила" /><br />
+                        <input class="int" type="number" value="1" placeholder="Интелект" /><br />
+                        <input class="will" type="number" value="1" placeholder="Воля" /><br />
+                        <input class="speed" type="number" value="1" placeholder="Бързина" /><br />
+                    </div>
+                </p>
+                <p>
+                    <strong>Модификатори от Умения:</strong>
+                    <div class="btn btn-primary" href="#" role="button" id="add-skill-p2"> добави... &raquo;</div>
+                    <div id="p2-skills" class="skills"></div>
+                </p>
+                <p>
+                    <strong>Елементални Джуцута:</strong>
+                    <div class="btn btn-primary" href="#" role="button" id="add-jutsu-p2"> добави... &raquo;</div>
+                    <div id="p2-jutsus" class="jutsus"></div>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <h2>Резултати <div class="btn btn-primary" href="#" role="button" id="run-tool"> Run. &raquo;</div></h2>
+                
+                <div class="col-lg-6" id="tool-results-1"> - - - - </div>
+                <div class="col-lg-6" id="tool-results-2"> - - - - </div>
+            </div>
+        </div>
+
+        <!-- Site footer -->
+        <footer class="footer">
+            <hr />
+            <p>&copy; 2017 Сико Ризоно, Inc.</p>
+
+            <script type='text/javascript' src="jQuery.js"></script>
+
+            <script type='text/javascript' src="addSkill.js"></script>
+            <script type='text/javascript' src="addJutsu.js"></script>
+            <script type='text/javascript' src="parser.js"></script>
+            <script type='text/javascript' src="calculator.js"></script>
+            <script type='text/javascript' src="registerButtons.js"></script>
+        </footer>
+
+    </div> <!-- /container -->
+
+</body>
+</html>
