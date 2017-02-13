@@ -1,11 +1,25 @@
-﻿var possibleJutsuTypes = [
-    "избери...",
+﻿var specialJutsuTypes ={
+    ninjutsu: "Нинджуцу",
+    genjutsu: "Генджуцу",
+    taijutsu: "Тайджуцу"
+};
+
+var possibleJutsuTypes = [
+    specialJutsuTypes.ninjutsu,
     "Катон",
     "Райтон",
     "Суйтон",
     "Датон",
-    "Фуутон"
+    "Фуутон",
+    specialJutsuTypes.genjutsu,
+    specialJutsuTypes.taijutsu
 ];
+
+var jutsuUsages = {
+    offecne: "⚔",
+    deffence: "⛨",
+    utility: "?"
+};
 
 var elementStrogAgainst = {
     "Суйтон": "Катон",
@@ -16,8 +30,6 @@ var elementStrogAgainst = {
 };
 
 var possibleJutsuRanks = [
-    "избери...",
-    "E",
     "D",
     "C",
     "B",
@@ -26,7 +38,6 @@ var possibleJutsuRanks = [
 ];
 
 var jutsuPoitnsByRank = {
-    E: 0,
     D: 1,
     C: 4,
     B: 7,
@@ -40,16 +51,22 @@ var addJutsu = (function addJutsu_context() {
             .addClass("jutsu")
             .addClass("row");
 
-        var jutsuElementSelector = $("<select>")
-            .addClass("element")
+        var jutsuTypeSelector = $("<select>")
+            .addClass("type")
             .addClass("col-*-*");
 
         var jutsuRankSelector = $("<select>")
             .addClass("rank")
             .addClass("col-*-*");
 
+        var jutsuUsageSelector = $("<select>")
+            .addClass("usage")
+            .addClass("col-*-*");
+
         jutsuContainer
-            .append(jutsuElementSelector)
+            .append(jutsuTypeSelector)
+            .append(" - ")
+            .append(jutsuUsageSelector)
             .append(" - ")
             .append(jutsuRankSelector)
             .append(" - ")
@@ -57,10 +74,13 @@ var addJutsu = (function addJutsu_context() {
                 .addClass("col-*-*"))
 
         for (var i in possibleJutsuTypes) {
-            jutsuElementSelector.append($("<option>").val(i).append(possibleJutsuTypes[i]));
+            jutsuTypeSelector.append($("<option>").val(i).append(possibleJutsuTypes[i]));
         }
         for (var i in possibleJutsuRanks) {
             jutsuRankSelector.append($("<option>").val(i).append(possibleJutsuRanks[i]));
+        }
+        for (var i in jutsuUsages) {
+            jutsuUsageSelector.append($("<option>").val(i).append(jutsuUsages[i]));
         }
 
         return jutsuContainer;

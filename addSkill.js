@@ -20,8 +20,7 @@ var anathomy = "Анатомия";
 var painResistence = "Устойчивост на болка";
 
 var possibleSkills = [
-    "избери...",
-
+    "...",
     superListening,
     superSight,
     superSmell,

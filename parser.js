@@ -31,7 +31,8 @@
 
         $(selector).find(".jutsu").each(function (i, el) {
             results.push({
-                element: $(el).find("select.element option:selected").text(),
+                type: $(el).find("select.type option:selected").text(),
+                usage: $(el).find("select.usage option:selected").text(),
                 rank: $(el).find("select.rank option:selected").text(),
                 level: parseNum($(el).find("input"))
             });

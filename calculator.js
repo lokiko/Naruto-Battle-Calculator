@@ -49,12 +49,23 @@
 
     function calculateJutsuStatement(i, player, otherPlayer) {
         var jutsu = player.jutsus[i];
-        if (jutsu.element == possibleJutsuTypes[0]) return;
-        if (jutsu.rank == possibleJutsuRanks[0]) return;
-
         var power = jutsuPoitnsByRank[jutsu.rank] + jutsu.level - 1;
-        return jutsu.rank + " ранг " + jutsu.element + " (" + jutsu.level + ") -> " + power + " точки."
-            + "<br/>(" + (power + 3) + " срещу " + elementStrogAgainst[jutsu.element] + ")";
+
+        var result = jutsu.rank + " ранг " + jutsu.type + " (" + jutsu.level + ") -> ";
+        if(jutsu.type == specialJutsuTypes.genjutsu) {
+            result += "???"
+        }
+        else {
+            result += power + " точки."
+        }
+        
+        if(elementStrogAgainst[jutsu.type])
+            result +=  "<br/>(" + (power + 3) + " срещу " + elementStrogAgainst[jutsu.type] + ")";
+
+        if(jutsu.usage == jutsuUsages.deffence)
+            result +=  "<br/>(+2 като защитно умение)";
+        
+        return result;
     }
 
     function calculateStatements(player, otherPlayer) {
